@@ -436,6 +436,9 @@ for iSampleSize = 1 : length(sampleSizeRenge)
                 StrafRSSLtmp = mean(reshape(samplingClusterEval(:,(secendLoop*9)+1:secendLoop*10),[],1));
                 resultClusterEval(appLoop,14) = StrafRSSLtmp;
                 
+                
+                xlswrite('resultClusterEval.xlsx',resultClusterEval,1);
+                
                 if showClusterEvalMessage
                     fprintf(sprintf('SRS Clustering Eval: %d \n',SRStmp));
                     fprintf(sprintf('RSS Diagonal Clustering Eval: %d \n',RSSDtmp));
