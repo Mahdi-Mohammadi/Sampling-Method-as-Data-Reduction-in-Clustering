@@ -1,16 +1,21 @@
 function [ result ] = ClusteringEval( dataClassName,clusterDataIndex,numberOfCluster )
-%CLUSTERINGEVAL Summary of this function goes here
-%   Detailed explanation goes here
-result = 100;
-if (numberOfCluster<7)
-    P = perms(1:numberOfCluster);
+% This function Evaluate Clustering
+% Input:
+%   - dataClassName : True Class Name
+%   - clusterDataIndex : Clustering Class Name
+%   - numberOfCluster : Number Of Cluster
+% 
+% Return:
+%   - Percent of Error in Clustering
+if (numberOfCluster<=6) % If numberOfCluster > 6 then time of evaluation is very long
+    P = perms(1:numberOfCluster); % All possible permutations
     errorTemp = zeros(length(P),1);
     for n = 1:length(P);
         error = 0;
         tmpClass = P(n,:);
         for i = 1:length(dataClassName);
-            masterClass = dataClassName(i);
-            kmeansClass = clusterDataIndex(i);
+            masterClass = dataClassName(i); % Master Class Name
+            kmeansClass = clusterDataIndex(i); % Clustering Class Name 
             if(kmeansClass > numberOfCluster )
                 error = error +1;
             elseif(masterClass ~= tmpClass(kmeansClass))
