@@ -51,33 +51,11 @@ fprintf('Start\n');
 %--------------------------------------------------------------------------
 % Create Zero Vector For SpeedUp
 %--------------------------------------------------------------------------
-% simpleRandomSampleVar = zeros(mainLoop,secendLoop);
-% simpleRandomSampleStd = zeros(mainLoop,secendLoop);
-% simpleRandomSampleMean = zeros(mainLoop,secendLoop);
-% simpleRandomSampleClusteringSumDistance = zeros(mainLoop,secendLoop);
-% simpleRandomSampleClusterEval = zeros(mainLoop,secendLoop);
-
-% rankedSetSampleVar = zeros(mainLoop,secendLoop);
-% rankedSetSampleStd = zeros(mainLoop,secendLoop);
-% rankedSetSampleMean = zeros(mainLoop,secendLoop);
-% rankedSetSampleClusteringSumDistance = zeros(mainLoop,secendLoop);
-% rankedSetSampleClusterEval = zeros(mainLoop,secendLoop);
-
-% stratifiedRandomSampleVar = zeros(mainLoop,secendLoop);
-% stratifiedRandomSampleStd = zeros(mainLoop,secendLoop);
-% stratifiedRandomSampleMean = zeros(mainLoop,secendLoop);
-% stratifiedRandomSampleClusteringSumDistance = zeros(mainLoop,secendLoop);
-% stratifiedRandomSampleClusterEval = zeros(mainLoop,secendLoop);
-
-% stratifiedRankedSetSampleVar = zeros(mainLoop,secendLoop);
-% stratifiedRankedSetSampleStd = zeros(mainLoop,secendLoop);
-% stratifiedRankedSetSampleMean = zeros(mainLoop,secendLoop);
-% stratifiedRankedSetSampleClusteringSumDistance = zeros(mainLoop,secendLoop);
-% stratifiedRankedSetSampleClusterEval = zeros(mainLoop,secendLoop);
 if runAllData
     allDataClusteringSumDistance = zeros(mainLoop,1);
     allDataClusterEval = zeros(mainLoop,1);
 end
+
 % Why secendLoop * 10 ?
 % 10 for SimpleRandomSampling + RankedSetSamplingDiagonal +
 %        RankedSetSamplingMiddel + RankedSetSamplingFirst +
@@ -117,8 +95,6 @@ for iSampleSize = 1 : length(sampleSizeRenge)
                 %--------------------------------------------------------------------------
                 %--------------------------------------------------------------------------
                 %--------------------------------------------------------------------------
-                %--------------------------------------------------------------------------
-                
                 
                 %--------------------------------------------------------------------------
                 % Start of Main Loop
